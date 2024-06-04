@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1717493753 source:c:\users\win10\desktop\codigos_feevale\estrutura_de_dados\ordenacao\selection_sort\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
