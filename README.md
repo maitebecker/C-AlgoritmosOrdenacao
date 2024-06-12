@@ -1,4 +1,5 @@
 # C-AlgoritmosOrdenacao
+Implementação de alguns algoritmos de ordenação na linguagem C
 
 ## *Bubble Sort:*
 - Sempre vou olhar para o elemento de indice j e para o elemento de indice j+1. Quero saber se o valor da posição j é maior que o valor da posição j+1, ou seja, se o proxímo elemento é maior que o anterior.
