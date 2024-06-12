@@ -1,6 +1,6 @@
 # C-AlgoritmosOrdenacao
 
-### *Bubble Sort:*
+## *Bubble Sort:*
 - Sempre vou olhar para o elemento de indice j e para o elemento de indice j+1. Quero saber se o valor da posição j é maior que o valor da posição j+1, ou seja, se o proxímo elemento é maior que o anterior.
 
   ``` if (A[j]>A[j+1]) ```
@@ -30,7 +30,7 @@
   ```
 - Na primeira vez que a estrutura de repetição externa é executada, garantimos que o último elemento está posição correta, na terceira vez o peníltimo e assim em diante...
 
-### *Selection Sort:*
+## *Selection Sort:*
 - Nesse algoritmo de ordenação temos uma variável "menor". No incicio da execução, consideramos que a primeira posição do vetor é o menor valor
 - Depois testamos se o índice j é menor que a posição da variável menor
    ```
