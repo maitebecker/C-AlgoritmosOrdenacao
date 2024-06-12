@@ -15,7 +15,7 @@ void bubble_sort(int A[]) {
    }
 }
 ```
-- Sempre vou olhar para o elemento de indice j e para o elemento de indice j+1. Quero saber se o valor da posição i é maior que o valor da posição i+1, ou seja, se o proxímo elemento é maior que o anterior.
+- Sempre vou olhar para o elemento de indice j e para o elemento de indice j+1. Quero saber se o valor da posição j é maior que o valor da posição j+1, ou seja, se o proxímo elemento é maior que o anterior.
 
   ``` if (A[j]>A[j+1]) ```
 - Caso sim, trocamos esses elementos de lugar, utilizando uma variável auxiliar
@@ -25,7 +25,8 @@ void bubble_sort(int A[]) {
    A[j+1] = aux;
   ```
 - Caso não, incrementamos o indice j e verificamos a posição seguinte
-- Realizamos esse passo para todas as posições do vetor. Nessa primeira varredura garantimos que o último elemento está na posição correta.
+- Realizamos esse passo para todas as posições do vetor. Nessa primeira varredura garantimos que o último elemento é o maior elemento do vetor.
+- Não temos como garantir que os outros elementos estão na posição correta, então realizamos esse mesmo processo outras vezes
 - Esses passos estarão dentro de outra estrutura de repetição que é realizada até não precisarmos realizar mais nenhuma troca, ou seja, paramos quando o vetor já está ordenado
 
 ###
