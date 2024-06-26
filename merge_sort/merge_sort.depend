@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1718481555 source:c:\users\win10\desktop\codigos_feevale\estrutura_de_dados\ordenacao\c-algoritmosordenacao\merge_sort\merge_sort.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

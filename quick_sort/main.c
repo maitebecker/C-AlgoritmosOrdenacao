@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define TAM 200000
-#define NUM_ALEAT 1000000
+#define TAM 50
+#define NUM_ALEAT 100
 
 // Algoritmo que utiliza a estratégia do quick sort para ordenar o vetor.
 void quick_sort(int *v, int tamanho)
@@ -63,12 +63,12 @@ int main()
     double diferenca;
     int vetor[TAM];
     monta_vetor(vetor);
-    //imprimir_vetor(vetor, "VETOR DESORDENADO");
+    imprimir_vetor(vetor, "VETOR DESORDENADO");
     inicio = clock();
     quick_sort(vetor, TAM);
     fim = clock();
     diferenca = fim - inicio;
     printf("Tempo em ms: %10.4f\n", diferenca/(CLOCKS_PER_SEC/1000));
-    //imprimir_vetor(vetor, "VETOR ORDENADO");
+    imprimir_vetor(vetor, "VETOR ORDENADO");
     return 0;
 }

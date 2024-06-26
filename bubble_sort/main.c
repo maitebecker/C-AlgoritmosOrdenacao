@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define TAMANHO 10
-#define NUM_ALEAT 1000000
+#define TAMANHO 100000
+#define NUM_ALEAT 10000
 
 // Função que cria os valores de modo aleatório para o vetor que deseja-se ordenar
 void monta_vetor(int A[]) {
@@ -38,7 +38,14 @@ void bubble_sort(int A[]) {
 }
 
 int main () {
-    int A[TAMANHO] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+    clock_t inicio, fim;
+    double diferenca;
+    int A[TAMANHO];
+    monta_vetor(A);
+    inicio = clock();
     bubble_sort(A);
-    escreve_vetor(A, "VETOR ORDENADO");
+    fim = clock();
+    diferenca = fim - inicio;
+    printf("Tempo em ms para buble sort: %10.4f\n", diferenca/(CLOCKS_PER_SEC/1000));
+    //escreve_vetor(A, "VETOR ORDENADO");
 }

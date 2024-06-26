@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define TAMANHO 200
-#define NUM_ALEAT 1000000
+#define TAMANHO 200000
+#define NUM_ALEAT 10000
 
 // Algoritmo que utiliza a estratégia do insertion sort para ordenar o vetor.
 void insertion_sort(int A[]) {
@@ -40,11 +40,11 @@ int main () {
     double diferenca;
     int A[TAMANHO];
     monta_vetor(A);
-    escreve_vetor(A, "VETOR DESORDENADO");
+    //escreve_vetor(A, "VETOR DESORDENADO");
     inicio = clock();
     insertion_sort(A);
     fim = clock();
     diferenca = fim - inicio;
     printf("Tempo em ms: %10.4f", diferenca/(CLOCKS_PER_SEC/1000));
-    escreve_vetor(A, "VETOR ORDENADO");
+    //escreve_vetor(A, "VETOR ORDENADO");
 }
