@@ -180,3 +180,58 @@ void quick_sort(int *v, int tamanho)
 }
 ```
 
+## *Merge Sort*
+- O algoritmo utiliza o paradigma de programação de dividir para conquistar
+- Primeiro chamamos a função merge_sort que vai dividir o meu vetor em listas menores, até termos vetores de uma unidade
+```
+void merge_sort(int A[], int p, int r) {
+  int q;
+  q = (p+r)/2;
+  if (p < r) {
+    merge_sort(A,p,q);
+    merge_sort(A,q+1,r);
+    merge(A,p,q,r);
+  }
+}
+```
+- A[] = vetor
+- p = posição incial
+- q = meio
+- r = posição final
+- Depois vem o passo de junção desses vetores unitários, através da função merge
+```
+void merge(int A[], int p, int q, int r) {
+  int i,j,k,n1,n2;
+  n1 = q - p + 1;
+  n2 = r - q;
+
+  int L[n1+1];
+  int R[n2+1];
+
+  for (i=0; i<n1; i++)
+    L[i] = A[p+i];
+
+  for (j=0; j<n2; j++)
+    R[j] = A[q+j+1];
+
+  L[n1] = 999999;
+  R[n2] = 999999;
+
+  i = 0; j = 0;
+  for (k=p; k<=r; k++) {
+    if (L[i] <= R[j]) {
+        A[k] = L[i];
+        i++;
+    }
+    else {
+        A[k] = R[j];
+        j++;
+    }
+  }
+}
+```
+- O primeiro for pega os primeiros elementos e coloca no vetor L
+- O segundo for pega os demais elementos e coloca no vetor R
+- Colocamos o infinito na ultima posição dos vetores
+- Comparamos os valores dos dois vetores e ordenamos os elementos
+
