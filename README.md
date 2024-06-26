@@ -96,3 +96,87 @@ void insertion_sort(int A[]) {
     }
 }
 ```
+
+## *Quick Sort:*
+- O algorimo Quick Sort utiliza o paradigma de programação de dividir para conquistar
+- O vetor é particionado em subvetores a partir do elemento pivô
+- O elemento pivô pode ser o primeiro elemento do vetor, por exemplo
+```
+pivo = v[0];
+```
+- O elemento pivô deve ser posicionado, de tal forma que, os elementos menores que ele sejam
+posicionados no lado esquerdo e os elementos maiores que o pivô sejam mantidos do lado
+direito
+- Utilizamos duas variáveis para percorrer o vetor. A variável início e a variável fim
+```
+inicio = 1;
+fim = tamanho - 1;
+```
+- Percorremos o vetor da esquerda para direira até encontrar elemento maior que o pivô
+```
+while(inicio < tamanho && v[inicio] <= pivo) inicio++;
+```
+- Depois percorremos o vetor da direita para esquerda até encontrar elemento menor que o pivô
+```
+while(v[fim] > pivo) fim--;
+```
+- Verificamos se inicio é menor que fim, caso sim trocamos as duas posições
+        }
+```
+if(inicio < fim) {
+    int temp = v[inicio];
+    v[inicio] = v[fim];
+    v[fim] = temp;
+    inicio++;
+    fim--;
+}
+```
+- Realizamos esses passos até o incio ser maior que o fim, ou seja, a posição do vetor estar definida
+- Realizamos a troca do vetor
+```
+    v[0] = v[fim];
+    v[fim] = pivo;
+```
+- Fizemos duas chamadas recursivas da função. As chamadas recursivas irão realizar os mesmos passos acima até o tamanho do vetor ser um ou zero, ou seja, até o subvetor estar totalmente ordenado
+```
+quick_sort(v, fim);
+quick_sort(&v[inicio], tamanho - inicio);
+```
+- No final o algoritmo fica assim:
+```
+void quick_sort(int *v, int tamanho)
+{
+    int pivo;
+    int inicio;
+    int fim;
+    if(tamanho<=1)
+        return;
+    else{
+        pivo = v[0];
+        inicio = 1;
+        fim = tamanho - 1;
+    do{
+        //percorre vetor da esquerda para direira até encontrar elemento maior que o pivô
+        while(inicio < tamanho && v[inicio] <= pivo) inicio++;
+        //Percorre vetor da direita para esquerda até encontrar elemento menor que o pivô
+        while(v[fim] > pivo) fim--;
+        if(inicio < fim){
+            int temp = v[inicio];
+            v[inicio] = v[fim];
+            v[fim] = temp;
+            inicio++;
+            fim--;
+        }
+    }while (inicio < fim);
+
+    //troca pivô
+    v[0] = v[fim];
+    v[fim] = pivo;
+
+    //chamadas recursivas da função
+    quick_sort(v, fim);
+    quick_sort(&v[inicio], tamanho - inicio);
+    }
+}
+```
+
